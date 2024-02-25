@@ -1,14 +1,14 @@
 <script lang="ts">
-	//   import 'dotenv/config'
+
 	import {
 		PUBLIC_apiKey,
-		PUBLIC_authDomain,
-		PUBLIC_projectId,
-		PUBLIC_storageBucket,
-		PUBLIC_messagingSenderId,
 		PUBLIC_appId,
+		PUBLIC_authDomain,
 		PUBLIC_firebaseEmail,
-		PUBLIC_firebasePassword
+		PUBLIC_firebasePassword,
+		PUBLIC_messagingSenderId,
+		PUBLIC_projectId,
+		PUBLIC_storageBucket
 	} from '$env/static/public';
 	import Axios from 'axios';
 	// import { ToastContainer, toast } from 'react-toastify';
@@ -26,7 +26,7 @@
 	const zip = new JSZip();
 
 	let backenable = createEventDispatcher();
-	let refresh=createEventDispatcher()
+	let refresh = createEventDispatcher();
 	let inputpassword: String;
 	let uploadProgress: number = 0;
 	let uploading = false;
@@ -156,19 +156,18 @@
 									fileSize: totlaMb,
 									FilePassword: inputpassword
 								};
-								const url1="https://fileupload.cyclic.app/userFile/upload/frontend"
+								const url1 = 'https://fileupload.cyclic.app/userFile/upload/frontend';
 								const url = '//localhost:8020/userFile/upload/frontend';
 								const response = await Axios.post(url1, data);
 								console.log(response);
 								if (response.status == 200) {
 									console.log('uploaded');
 									backenable('back', false);
-									refresh("refreshpage",true)
+									refresh('refreshpage', true);
 								}
 							})();
-
 						} catch (error) {
-							notifications.warning(error, 3000);
+							notifications.info(error, 3000);
 							// console.log(error);
 						}
 					});
@@ -176,7 +175,7 @@
 			);
 		} catch (error) {
 			console.log(error);
-			notifications.warning(error, 3000);
+			notifications.info(error, 3000);
 		}
 	}
 </script>
@@ -202,9 +201,12 @@
 	{#if uploading == true}
 		{uploadProgress.toFixed(1) + '%'}
 	{/if}
-    
+
 	<div>
-		<p> <span class="text-red-600">{uniqueid}  </span>     This is your fileKey for searching Please note down this key help you out to search your file and remember your password </p>
+		<p>
+			<span class="text-red-600">{uniqueid} </span> This is your fileKey for searching Please note down
+			this key help you out to search your file and remember your password
+		</p>
 	</div>
 	<Toast />
 </main>
