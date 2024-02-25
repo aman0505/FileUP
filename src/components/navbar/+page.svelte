@@ -1,7 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
+	import {PUBLIC_frontendBaseurl}from '$env/static/public'
 	function searchfile() {
-		goto('http://localhost:5173/search');
+		goto('https://file-up-r8xb-aman-rauniyars-projects.vercel.app/search');
 	}
 </script>
 
