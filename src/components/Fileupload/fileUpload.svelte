@@ -49,6 +49,7 @@
 		let displayfilesdiv: HTMLDivElement = document.getElementById('displayfiles') as HTMLDivElement;
 		displayfilesdiv.classList.toggle('hidden');
 		inpufilesdiv.classList.toggle('mx-auto');
+		displayfilesdiv.classList.toggle('w-[50%]');
 	}
 
 	function getFiles() {
@@ -135,7 +136,7 @@
 			</div>
 		</div>
 		<div
-			class=" max-[640px]:w-full max-[640px]:max-h-[400px] overflow-y-auto hidden relative w-[50%] my-1 border-solid border-2 rounded-xl sm:h-[20rem] p-10 transition-all duration-[2s]"
+			class=" max-[640px]:w-full max-[640px]:max-h-[400px] overflow-y-auto hidden relative  my-1 border-solid border-2 rounded-xl sm:h-[20rem] p-10 transition-all duration-[4s]"
 			id="displayfiles"
 		>
 			<!-- svelte-ignore missing-declaration -->
