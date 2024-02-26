@@ -2,7 +2,9 @@
 	import { goto } from '$app/navigation';
 	import {PUBLIC_frontendBaseurl}from '$env/static/public'
 	function searchfile() {
-		goto('https://file-up-r8xb-aman-rauniyars-projects.vercel.app/search');
+		const url=`${PUBLIC_frontendBaseurl}search`
+		window.location.assign(`${PUBLIC_frontendBaseurl}/search`)
+
 	}
 </script>
 
@@ -11,6 +13,7 @@
 		<!-- http://localhost:5173/search -->
 
 		<div class="w-[90%] h-full flex items-center justify-end gap-7">
+			<a href={`${PUBLIC_frontendBaseurl}`} >home</a>
 			<li class="list-none">login</li>
 			<li class="list-none">signUp</li>
 			<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
