@@ -3,7 +3,7 @@
 	import {PUBLIC_frontendBaseurl}from '$env/static/public'
 	function searchfile() {
 		const url=`${PUBLIC_frontendBaseurl}search`
-		window.location.assign(`${PUBLIC_frontendBaseurl}/search`)
+		window.location.assign(`${PUBLIC_frontendBaseurl}search`)
 
 	}
 </script>
