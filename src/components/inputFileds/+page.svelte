@@ -84,7 +84,7 @@
 			}
 			const data = await zip.generateAsync({ type: 'blob' });
 
-			const storageRef = ref(storage, uniqueid.zip);
+			const storageRef = ref(storage, `${uniqueid}.zip`);
 			console.log('uniqueid', uniqueid);
 
 			const uploadTask = uploadBytesResumable(storageRef, data, metadata);
