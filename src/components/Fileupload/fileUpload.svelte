@@ -67,7 +67,7 @@
 		}
 		let fileInKb: number = TotalFileSizeBytes / 1000;
 		fileinMB = fileInKb / 1000;
-		if (fileinMB > 4) {
+		if (fileinMB > 10) {
 			filesdata = [];
 			fileInput.value = '';
 			Tostnotification('File size must be less than 4MB');
